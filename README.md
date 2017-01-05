@@ -8,7 +8,7 @@ The script will read in the austin.craigslist.org/search/sof URL and output the 
 
 ```
 	Time Posted: 2017-01-05 09:30:00
-	Title: Tech Startup Looking for Veterans: Up to $300 for 3-5 hours of work (O
+	Title: Tech Startup Looking for Veterans: Up to $300 for 3-5 hours of work
 
 	Time Posted: 2017-01-04 15:34:00
 	Title: 100% remote Node.js developer - full time with benefits
@@ -27,9 +27,9 @@ The script will read in the austin.craigslist.org/search/sof URL and output the 
 
 Version: Python 2.7.10
 
+EXAMPLE:
 ```
 	python craigslistbot.py http://austin.craigslist.org/search/sof
-
 ```
 ## Author
 
