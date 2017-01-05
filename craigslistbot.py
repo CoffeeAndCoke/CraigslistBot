@@ -1,4 +1,13 @@
 # -*- coding: utf-8 -*-
+'''
+
+Author: Edgar jaimes
+Version: 1.0
+
+About: Simple python script that takes a craigslist URL through the command line
+       and emails the top 5 most recent posts
+
+'''
 import sys, json
 import bs4
 import requests
@@ -7,7 +16,7 @@ from datetime import datetime
 import smtplib
 from email.mime.text import MIMEText
 
-
+#Read CMD line URL
 if len(sys.argv) > 1:
     address = (sys.argv[1])
 else:
@@ -35,19 +44,21 @@ for x in range(0, 5):
     stackDates.append(postDateTimeObj)
     stackTitles.append(str(postTitle[x].get_text()))
 
+#Create a text string to send in email mesg
 text = ""
-print "Here are the top 5 software posts:\n"
+print "Here are the 5 most recent software posts:\n"
 for x, y in zip(stackDates, stackTitles):
     text += "Time Posted: " + (str(x) + "\nTitle: " + (y) + "\n\n")
 print text
 
-
+#Input to get email and credentials
 me = raw_input("Please enter your email address: ")
 password = raw_input("Please enter your email password: ")
 you = raw_input("Please enter the email to which to send the results: ")
 
+#Email Settings
 msg = MIMEText(text)
-msg['Subject'] = "Top 5 Software Job Post from Austin's Craigslist"
+msg['Subject'] = "The 5 Most Recent Software Job Post from Austin's Craigslist"
 msg['From'] = me
 msg['To'] = you
 
@@ -57,5 +68,5 @@ server.ehlo()
 server.starttls()
 server.login(me, password)
 server.sendmail(me, [you], msg.as_string())
-print "email sent!"
+print "\nEmail Sent!"
 server.quit()
