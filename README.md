@@ -1,6 +1,6 @@
 ## Synopsis
 
-This script takes a craigslist URL as a command line parameter and emails the top 5 most recent posts. It’s a the beginning of a bot with smarter features being added.
+This script takes a craigslist URL as a command line parameter and emails the top 5 most recent posts. It’s the beginning of a bot with smarter features being added as time goes on.
 
 ## Example
 
